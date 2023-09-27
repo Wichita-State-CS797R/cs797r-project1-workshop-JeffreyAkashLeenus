@@ -3,20 +3,20 @@ using MonkeyFinder.Services;
 public partial class MonkeysViewModel : BaseViewModel
 {
     public ObservableCollection<Monkey> Monkeys { get; } = new();
-    public Command GetMonkeysCommand { get; }
+   
     MonkeyService monkeyService;
     public MonkeysViewModel()
 
     {
         Title = "Monkey Finder";
-        GetMonkeysCommand = new Command(async () => await GetMonkeysAsync());
+        Command GetMonkeysCommand = new Command(async () => await GetMonkeysAsync());
     }
     public MonkeysViewModel(MonkeyService monkeyService)
     {
         Title = "Monkey Finder";
         this.monkeyService = monkeyService;
     }
-
+    [RelayCommand]
     async Task GetMonkeysAsync()
     {
         if (IsBusy)
