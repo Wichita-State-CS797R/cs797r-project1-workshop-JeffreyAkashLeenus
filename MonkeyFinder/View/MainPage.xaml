@@ -21,9 +21,25 @@
                 <CollectionView
             ItemsSource="{Binding Monkeys}"
             SelectionMode="None">
+                    <CollectionView.EmptyView>
+                        <StackLayout Padding="100">
+                            <Image
+                HorizontalOptions="Center"
+                Source="nodata.png"
+                HeightRequest="160"
+                WidthRequest="160"
+                VerticalOptions="Center" />
+                        </StackLayout>
+                    </CollectionView.EmptyView>
+                    <CollectionView.ItemsLayout>
+
+                        <LinearItemsLayout Orientation="Vertical" />
+                    </CollectionView.ItemsLayout>
                     <CollectionView.ItemTemplate>
+                        
                 <DataTemplate x:DataType="model:Monkey">
                     <Grid Padding="10">
+                        
                         <Frame HeightRequest="125" Style="{StaticResource CardView}">
                             <!-- Add the Gesture Recognizer-->
                             <Frame.GestureRecognizers>
