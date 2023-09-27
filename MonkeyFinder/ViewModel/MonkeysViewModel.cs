@@ -3,7 +3,9 @@ using MonkeyFinder.Services;
 public partial class MonkeysViewModel : BaseViewModel
 {
     public ObservableCollection<Monkey> Monkeys { get; } = new();
-   
+    [ObservableProperty]
+    bool isRefreshing;
+
     MonkeyService monkeyService;
     public MonkeysViewModel()
 
@@ -97,6 +99,7 @@ public partial class MonkeysViewModel : BaseViewModel
         finally
         {
             IsBusy = false;
+            IsRefreshing = false;
         }
 
     }
