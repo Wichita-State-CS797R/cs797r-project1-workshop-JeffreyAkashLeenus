@@ -61,6 +61,13 @@
 			   Color="{StaticResource Primary}"
                            Grid.RowSpan="2"
                            Grid.ColumnSpan="2"/>
+        <Button Text="Find Closest" 
+    Command="{Binding GetClosestMonkeyCommand}"
+    IsEnabled="{Binding IsNotBusy}"
+    Grid.Row="1"
+    Grid.Column="1"
+    Style="{StaticResource ButtonOutline}"
+    Margin="8"/>
 
     </Grid>
 </ContentPage>
